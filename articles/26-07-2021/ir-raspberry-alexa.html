@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../css/main.css" type="text/css">
+    <title>BrunoLPZ</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-item">
+            <a href="/">Blog</a>
+        </div>
+        <div class="nav-item">
+            <a href="/github.html">Proyectos</a>
+        </div>
+        <div class="nav-item">
+            <a href="/about.html">Sobre mí</a>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="article-header">
+            <div class="article-card-header-text">
+                Mando universal con Raspberry y Alexa
+            </div>
+            <div class="article-card-header-topics">
+                <div class="article-card-header-topics">
+                    <div class="badge">
+                        #programming
+                    </div>
+                    <div class="badge">
+                        #raspberry
+                    </div>
+                    <div class="badge">
+                        #alexa
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-container">
+            <div class="navigation-menu">
+                <h2>Contenidos</h2>
+                <ul>
+                    <li>
+                        <a href="#section-1">Introducción y tecnologías</a>
+                    </li>
+                    <li>
+                        <a href="#section-2">Montando el circuito</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="article-content">
+                <a class="anchor" id="section-1"></a>
+                <h1>Introducción y tecnologías</h1>
+                <p>
+                    El objetivo de este proyecto era construír un mando universal para controlar por voz una <i>SmartTV</i> de Samsung. La propia <i>SmartTV</i>
+                    consta de una <i>Skill</i> oficial para Alexa, pero dicha aplicación está bastante limitada permitiendo únicamente operaciones sencillas como
+                    subir o bajar el volumen y cambiar de canal.
+                </p> 
+                <p>
+                    Para superar estas limitaciones surge la idea de iniciar un proyecto con una 
+                    <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/" target="_blank">Raspberry PI 4</a> que tenía abandonada. Este proyecto
+                    toma como punto de partida <a href="https://www.youtube.com/watch?v=V3oIcECYGfQ" target="_blank">este tutorial</a>, donde se explica todo el
+                    proceso desde el montaje del circuito hasta la integración con Alexa. Aunque, en este caso tanto la construcción del circuito como la propia
+                    implementación del <i>Skill</i> de Alexa difieren bastante. Por una parte, se utilizó <a href="http://expressjs.com/">ExpressJS</a> y el
+                    adaptador del SDK de <i>Skills</i> de Alexa (<a href="https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs#readme">ask-sdk-express-adapter</a>).
+                    Por otra parte, el procedimiento para grabar las señales de infrarrojo y emitirlas es completamente diferente, puesto que el software propuesto para
+                    capturar y emitir señales de IR (<a href="https://www.lirc.org/" target="_blank">lirc</a>) no funcionaba apropiadamente en el sistema operativo
+                    actualizado de mi Raspberry.
+                </p>
+                <p>
+                    Este proyecto no solo incluye software, sino que también se necesita montar el circuito de infrarrojos. En mi caso, que tengo 0 experiencia con estos
+                    temas, ha resultado bastante complejo inicialmente. He llegado a montar el circuito innumerables veces hasta darme cuenta de que el problema estaba en
+                    el propio software. Detallo a continuación todos los componentes hardware y el software necesario para ser lo más preciso posible y evitar posibles
+                    problemas.
+                </p>
+                <b>Hardware</b>
+                <ul>
+                    <li><a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/" target="_blank">Raspberry PI 4</a> (en mi caso con la versión 5.10.17-v7l del kernel)</li>
+                    <li><a href="https://www.amazon.es/gp/product/B071ZGC75Y/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1">Breadboard</a> (solo se necesita una, yo he pedido varias 
+                        por si quiero hacer otros proyectos)</li>
+                    <li><a href="https://www.amazon.es/gp/product/B07PP87M8F/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1">Resistencias</a> (recomendable pedir varias por si acaso)</li>
+                    <li><a href="https://www.amazon.es/gp/product/B073X7P6N2/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1">Cables</a> (importante tener cables macho-macho y macho-hembra)</li>
+                    <li><a href="https://www.amazon.es/gp/product/B00EFOTJZE/ref=ppx_yo_dt_b_asin_image_o08_s00?ie=UTF8&psc=1">Diodos IR</a> (solo he utilizado los emisores)</li>
+                    <li><a href="https://www.amazon.es/gp/product/B010BDTJ8E/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1">Receptor IR</a> (solo se necesita uno)</li>
+                    <li><a href="https://www.amazon.es/nuevo-echo-dot-4a-generacion-altavoz-inteligente-con-alexa-antracita/dp/B084DWG2VQ?pd_rd_w=FTE3a&pf_rd_p=c7402bf8-b5f4-407b-bf0c-3f56e4e12c49&pf_rd_r=X5ED3G0J7BJPANVTR8VF&pd_rd_r=b0048021-25a0-4613-9d05-4c29759da5af&pd_rd_wg=HtROk&pd_rd_i=B084DWG2VQ&psc=1&ref_=pd_bap_d_rp_1_i">Echo Dot</a></li>
+                </ul>
+
+                <b>Software</b>
+                <ul>
+                    <li><a href="http://expressjs.com/">ExpressJS</a> (para montar el servicio que expone las acciones o <i>Intents</i> de la <i>Skill</i> de Alexa)</li>
+                    <li><a href="https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs#readme">ask-sdk-express-adapter</a> (para construir los propios <i>Intents</i> de la 
+                        <i>Skill</i> de Alexa)</li>
+                    <li><a href="https://www.python.org/">Python</a> (para construir un <i>script</i> muy sencillo que permita capturar y emitir infrarrojos mediante el circuito)</li>
+                    <li><a href="https://www.developer.amazon.com/en-US/alexa/">Cuenta de desarrollo en Amazon</a> (para crear la <i>Skill</i> de Alexa)</li>
+                    <li><a href="https://ngrok.com/">ngrok</a> (servicio que permite tunelizar un servicio en local a través de Internet, para un entorno más estable se puede pagar por
+                        este servicio)</li>
+                </ul>
+                <a class="anchor" id="section-2"></a>
+                <h1>Montando el circuito</h1>
+                <p>
+                    Trabajo en proceso...
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
