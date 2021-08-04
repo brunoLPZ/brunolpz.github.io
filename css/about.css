@@ -1,114 +1,127 @@
 .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 4rem;  /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-  
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-  
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-  
-    /* Support for IE. */
-    font-feature-settings: 'liga';
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 3rem; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 
-    cursor: pointer;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+
+  cursor: pointer;
 }
 
-
 .avatar {
-    border-radius: 50%;
-    border-bottom-style: solid;
+  border-radius: 50%;
+  border-bottom-style: solid;
 }
 
 .about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 80%;
 }
 
 .about-item {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    justify-content: space-evenly;
-    border-bottom-style: solid;
-    padding-bottom: 10px;
-    border-width: 1px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  border-bottom-style: solid;
+  padding-bottom: 10px;
+  border-width: 1px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .about-item span {
-    text-align: center;
-    width: 10%;
-    min-width: 100px;
+  text-align: center;
+  width: 10%;
+  min-width: 100px;
 }
 
 .about-item-text {
-    text-align: center;
-    width: 80%;
+  text-align: center;
+  width: 80%;
 }
 
 .about-item-year {
-    text-align: center;
-    width: 10%;
+  text-align: center;
+  width: 10%;
 }
 
 @media screen and (min-width: 600px) {
-    .about-item .about-item-text {
-        width: 60%;
-    }
+  .about-item .about-item-text {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .about-item .about-item-text {
-        display: none;
-    }
+  .about-item .about-item-text {
+    display: none;
+  }
 }
 
-
 @keyframes show-opacity {
-    from {opacity: 0; display: none;}
-    to {opacity: 1; display: block;}
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: block;
+  }
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .animate-tooltip {
-    position: absolute;
-    bottom: 0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: rgb(189, 189, 189);
-    color: rgb(43, 43, 43);
-    font-size: 1.5rem;
-    padding: 30px;
-    animation-name: show-opacity;
-    animation-duration: 2s;
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: rgb(189, 189, 189);
+  color: rgb(43, 43, 43);
+  font-size: 1.5rem;
+  padding: 30px;
+  animation-name: show-opacity;
+  animation-duration: 2s;
 }
 
 @keyframes up-down {
-    0% {position: relative; top: -40px;}
-    50% {position: relative; top: 20px;}
-    100% {position: relative; top: 0;}
+  0% {
+    position: relative;
+    top: -40px;
+  }
+  50% {
+    position: relative;
+    top: 20px;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
 }
 
 .animate-up-down {
-    animation-name: up-down;
-    animation-duration: 2s;
+  animation-name: up-down;
+  animation-duration: 2s;
 }
