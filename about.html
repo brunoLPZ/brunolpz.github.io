@@ -16,7 +16,7 @@
     <title>BrunoLPZ</title>
 </head>
 
-<body>
+<body onload="carousel()">
     <div class="nav">
         <div class="nav-item">
             <a href="/">Blog</a>
@@ -29,58 +29,34 @@
         </div>
     </div>
     <div class="main-container">
-        <img src="images/profile.jpeg" height="196px" width="196px" class="avatar animate-up-down" />
-        <div class="about-container">
-            <div class="about-item animate">
-                <span class="material-icons" onmouseenter="onAboutItemEnter('graduate')"
-                    onmouseleave="onAboutItemLeave('graduate')">school</span>
-                <div class="hide" id="graduate">
-                    Graduado en Ingeniería Informática
-                </div>
-                <div class="about-item-text">
-                    Graduado en Ingeniería Informática
-                </div>
-                <div class="about-item-year">
-                    2018
-                </div>
+        <div class="avatar-container">
+            <img src="images/profile.jpeg" height="196px" width="196px" class="avatar animate-up-down" />
+            <div id="talkbubble" class="bubble-fade">
+                <div class="bubble-text">Hola!</div>
             </div>
-            <div class="about-item animate">
-                <span class="material-icons" onmouseenter="onAboutItemEnter('job-citius')"
-                    onmouseleave="onAboutItemLeave('job-citius')">work_outline</span>
-                <div class="hide" id="job-citius">
-                    Técnico superior de apoyo a la investigación (CiTIUS)
+        </div>
+        <div class="carousel-wrapper">
+            <div class="title bubble-fade">Mis estudios y trabajos</div>
+            <div class="carousel bubble-fade">
+                <div class="carousel-item">
+                    <p style="font-size: 8rem;">&#x1f393;</p>
+                    <p>Grado en Ingeniería Informática</p>
+                    <p style="font-size: 3rem;">2018</p>
                 </div>
-                <div class="about-item-text">
-                    Técnico superior de apoyo a la investigación (CiTIUS)
+                <div class="carousel-item">
+                    <p style="font-size: 8rem;">&#x1F4bc;</p>
+                    <p>Técnico superior de apoyo a la investigación (CiTIUS)</p>
+                    <p style="font-size: 3rem;">2018</p>
                 </div>
-                <div class="about-item-year">
-                    2018
+                <div class="carousel-item">
+                    <p style="font-size: 8rem;">&#x1F4bc;</p>
+                    <p>Desarrollador Full Stack - Proyecto Cinfoni (Imatia)</p>
+                    <p style="font-size: 3rem;">2021</p>
                 </div>
-            </div>
-            <div class="about-item animate">
-                <span class="material-icons" onmouseenter="onAboutItemEnter('job-cinfoni')"
-                    onmouseleave="onAboutItemLeave('job-cinfoni')">work_outline</span>
-                <div class="hide" id="job-cinfoni">
-                    Desarrollador Full Stack - Proyecto Cinfoni (Imatia)
-                </div>
-                <div class="about-item-text">
-                    Desarrollador Full Stack - Proyecto Cinfoni (Imatia)
-                </div>
-                <div class="about-item-year">
-                    2021
-                </div>
-            </div>
-            <div class="about-item animate">
-                <span class="material-icons" onmouseenter="onAboutItemEnter('job-bcp')"
-                    onmouseleave="onAboutItemLeave('job-bcp')">work_outline</span>
-                <div class="hide" id="job-bcp">
-                    Desarrollador Full Stack - Proyecto BCP (Imatia)
-                </div>
-                <div class="about-item-text">
-                    Desarrollador Full Stack - Proyecto BCP (Imatia)
-                </div>
-                <div class="about-item-year">
-                    -
+                <div class="carousel-item">
+                    <p style="font-size: 8rem;">&#x1F4bc;</p>
+                    <p>Desarrollador Full Stack - Proyecto BCP (Imatia)</p>
+                    <p style="font-size: 3rem;">-</p>
                 </div>
             </div>
         </div>

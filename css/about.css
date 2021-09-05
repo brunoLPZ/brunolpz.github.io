@@ -30,80 +30,87 @@
   border-bottom-style: solid;
 }
 
-.about-container {
+.avatar-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: solid 1px;
+  display: flex;
+}
+
+.bubble-text {
+  color: rgb(43, 43, 43);
+  text-align: center;
+  font-size: 2.3rem;
+  line-height: 8rem;
+}
+
+#talkbubble {
+  opacity: 0;
+  width: 12rem;
+  height: 8rem;
+  background: rgb(189, 189, 189);
+  position: relative;
+  top: -4rem;
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+}
+
+#talkbubble:before {
+  content: "";
+  position: absolute;
+  right: 9.5rem;
+  top: 7rem;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid rgb(189, 189, 189);
+  border-bottom: 13px solid transparent;
+  transform: rotate(-60deg);
+}
+
+.carousel-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
-  width: 80%;
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
-.about-item {
-  font-size: 1.5rem;
-  margin-top: 20px;
-  justify-content: space-evenly;
-  border-bottom-style: solid;
-  padding-bottom: 10px;
-  border-width: 1px;
-  width: 100%;
+.carousel {
+  opacity: 0;
+  margin-top: 3rem;
   display: flex;
-  align-items: center;
-}
-
-.about-item span {
-  text-align: center;
-  width: 10%;
-  min-width: 100px;
-}
-
-.about-item-text {
-  text-align: center;
-  width: 80%;
-}
-
-.about-item-year {
-  text-align: center;
-  width: 10%;
-}
-
-@media screen and (min-width: 600px) {
-  .about-item .about-item-text {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .about-item .about-item-text {
-    display: none;
-  }
-}
-
-@keyframes show-opacity {
-  from {
-    opacity: 0;
-    display: none;
-  }
-  to {
-    opacity: 1;
-    display: block;
-  }
-}
-
-.hide {
-  display: none;
-}
-
-.animate-tooltip {
-  position: absolute;
-  bottom: 0;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: rgb(189, 189, 189);
+  flex-wrap: wrap;
+  justify-items: center;
   color: rgb(43, 43, 43);
-  font-size: 1.5rem;
-  padding: 30px;
-  animation-name: show-opacity;
-  animation-duration: 2s;
+  border-radius: 2rem;
+  overflow: hidden;
+  min-height: 20rem;
+  height: 25rem;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 80%;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(168, 165, 165);
+  font-size: 2rem;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.carousel p {
+  margin: 0;
+  text-align: center;
+}
+
+.title {
+  opacity: 0;
+  font-size: 3rem;
+  text-align: center;
 }
 
 @keyframes up-down {
@@ -124,4 +131,20 @@
 .animate-up-down {
   animation-name: up-down;
   animation-duration: 2s;
+}
+
+@keyframes bubble-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bubble-fade {
+  animation-name: bubble-fade;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
