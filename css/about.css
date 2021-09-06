@@ -35,14 +35,28 @@
   margin-bottom: 2rem;
   padding-bottom: 4rem;
   border-bottom: solid 1px;
+  width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .bubble-text {
   color: rgb(43, 43, 43);
-  text-align: center;
   font-size: 2.3rem;
-  line-height: 8rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bubble-text p {
+  width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  border-right: .15em solid rgb(43, 43, 43);
+  letter-spacing: .20rem;
 }
 
 #talkbubble {
@@ -80,7 +94,6 @@
 
 .carousel {
   opacity: 0;
-  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
@@ -96,10 +109,18 @@
   height: 80%;
   margin: 1rem;
   padding: 1rem;
-  background-color: rgb(168, 165, 165);
   font-size: 2rem;
   border-radius: 2rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item-details {
+  padding: 2rem;
+  border: solid 0.1rem;
+  border-radius: 2rem;
+  color: rgb(168, 165, 165);
 }
 
 .carousel p {
@@ -133,7 +154,7 @@
   animation-duration: 2s;
 }
 
-@keyframes bubble-fade {
+@keyframes fade {
   0% {
     opacity: 0;
   }
@@ -142,9 +163,30 @@
   }
 }
 
-.bubble-fade {
-  animation-name: bubble-fade;
+.fade {
+  animation-name: fade;
   animation-duration: 2s;
   animation-delay: 2s;
   animation-fill-mode: forwards;
+}
+
+@keyframes text-appear {
+  0% { width: 0rem }
+  15% { width: 1.8rem }
+  30% { width: 3.2rem }
+  45% { width: 4rem }
+  60% { width: 4.2rem }
+  75% { width: 5.4rem }
+  90% { width: 6.5rem }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(43, 43, 43); }
+}
+
+.bubble-effect {
+  animation: text-appear 2s forwards infinite steps(1, end),
+              blink-caret .5s step-end infinite;
+  animation-delay: 3s;
 }
